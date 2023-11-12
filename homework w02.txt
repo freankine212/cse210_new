@@ -1,0 +1,35 @@
+class - Program:
+
+~~~~~~~~~~~~~~~~
+class - Journal:
+
+variables:
+_entries  : List<Entry>
+
+Methods:
+AddEntry(newEntry : Entry) : void
+DisplayAll() :void
+LoadFromFile(file: string)
+SaveToFile(file: string)
+
+~~~~~~~~~
+Class - Entry:
+
+Variables:
+_date :string
+_entry : string
+_prompt : string
+
+Methods:
+Display()
+
+~~~~~~~~~~~~
+
+Class - PromptGenerator:
+
+variables:
+_prompts: List<string>
+
+Methods:
+GetRandomPrompt(): string
+test
