@@ -1,0 +1,64 @@
+Scripture memorizer: Design
+
+Class:
+Scripture - //hide and display words
+
+Method:
+    HideRandomWords (numberToHide : int) : void
+    GetDisplayText() : string
+    IsCompletelyHidden() : bool
+
+    Hide words
+    display text - string, showing either word in the string or an underscore
+    check for all word to evauluate as hidden or not (refering to the Word class)
+
+Variable:
+_reference : Reference
+_words : List<Word>
+
+Class:
+Reference - //keeps track of book, chapter and verse
+    GetDisplayText() : string
+Method:
+
+Variable:
+_book : string
+_chapter : int
+_verse : int
+_endVerse : int
+
+Class:
+Word - //keeps track of single words and whether shown or hidden
+
+Method:
+    hide() : void
+    show() : void
+    IsHidden() : bool
+    GetDisplayText() : string
+    
+Variable:
+_text : string
+_isHidden : bool
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Evaluate the Design
+You could consider creating a Hider class that has the responsibility for hiding the words in the scripture. 
+What would be drawbacks of creating a Hider class instead of leaving that responsibility to the Scripture and 
+Word classes? -- adding another class  specificallt for hte gunctionalityt that could be included in the other 
+classes makes the codem ore complicated. more complicated, more maintenance, can over abstract 
+
+Evaluate the Design
+Which other methods should be called by the Scripture class's HideRandomWords method to help do its work?
+    hide method
+    show method
+What is a benefit of the Reference class containing its own GetDisplayText method, instead of having the 
+Scripture class display the book chapter and verse directly?
+    doesnt run the risk of the reference piece being hidden
+
+Evaluate the Design
+What is a benefit of the Scripture containing a list of Word objects instead of a list of strings?
+    The words being objects instead of strings allows the list to contain the IsHidden attribute
+    
+    
+    https://byui-cse.github.io/cse210-ww-course-2023/week03/images/scripture-program-class-diagram.png
