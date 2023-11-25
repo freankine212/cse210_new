@@ -1,0 +1,73 @@
+Inheritance
+
+Activity:
+DisplayStartingMessage() : void
+DisplayEndingMessage() : void
+ShowSpinner(seconds : int) : void
+ShowCountDown(second : int) : void
+
+Variables:
+_name : string
+_description : string
+_duration : int
+
+
+
+BreathingActivity:
+inherit from Activity
+Run() : void
+
+Variables:
+None
+
+ListingActivity:
+Inherit from Activity
+Run() : void
+GetRandomPrompt() : string
+GetListFromUser() : List<string>
+
+Variables:
+_count : int
+_prompts : List<string>
+
+ReflectionActivity:
+Inherit from Activity
+Run() : void
+GetRandomPrompt() : string
+GetRandomQuestion() : string
+DisplayPrompt() : void
+DisplayQuestions() : void
+
+Variables:
+_prompts : List<string>
+_questions : List<string>
+
+
+Evaluate the Design
+What is a benefit of having a base Activity class, instead of having only the three specific activity
+ classes themselves?
+    --to reduce boilerplate code, clutter, makes code more reusable, if there are changes
+     that need made in the code, it only has to be changedin one spot versus in multiple 
+     locations
+
+Evaluate the Design
+Notice that all three of the derived classes contain a run function. 
+Why can it not be defined in the base class and inherited?
+    -- Different usages, same name but different code inside each method
+
+Can a derived class method call a base class method? For example, can DisplayQuestions() in 
+the ReflectingActivity class call the ShowSpinner() method? Why or Why not?
+    -- yep -- because its called the base class -- everything in a child class can use 
+        functions and attributes in parent class 
+
+Evaluate the Design
+Notice that two of the three activity classes store a list of prompts. What is a potential benefit of 
+defining it in those classes as apposed to including it in the base class and having the 
+activity that does not need it simply ignore it and leave it empty?
+    -- Not all activities necessarily need lists. The ones that apply to specific activity
+    its easierto find if htey are stored. Possibly make a noparameter for the object class
+
+What is a benefit to requiring parameters for a constructor, instead of simply using the no-
+argument constructor and letting people use setters later to set the values?
+    --gives control over the expected output--creates more security (by setting as private)
+        can use setters and getters -- no risk of arbitrary code execution.
