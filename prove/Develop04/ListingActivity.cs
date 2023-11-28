@@ -1,23 +1,61 @@
-public class ListingActivity
+using System;
+using System.Diagnostics;
+
+public class ListingActivity : Activity
 {
-    public ListingActivity()
+    // Attributes 
+    private List<string> _promptList = new List<string>
     {
-        _count = 10;
-        _prompts = List<_prompts>;
+    "Who are your personal heroes?",
+    "What have you done to improve your relationship with your Heavenly Father?",
+    "Who are people that you appreciate?",
+    "What are personal strengths of yours?",
+    "Who are people that you have helped this week?",
+    "Who have you called this month just to talk and say hi?",
+    "When have you felt the Holy Ghost this month?",
+    "Who are some of your personal heroes?",
+    "When did you do your homework this week?"
+    };
+    private List<string> _userList = new List<string>();
+    private string _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+
+
+    // Constructors
+    // Methods
+    public ListingActivity(string activityNAME, int activityTIME) : base(activityNAME, activityTIME)
+    {
+
     }
-
-    public void Run()
+    public void GetActivityDESCRIPTION()
     {
-
+        Console.WriteLine(_description);
     }
-
-    public void GetRandomPrompt()
+    private string GetRandomPrompt()
     {
-
+        var random = new Random();
+        int index = random.Next(_promptList.Count);
+        return _promptList[index];
     }
-
-    public List<string> GetListFromUser()
+    public void ReturnPrompt(int seconds)
     {
-
+        Console.WriteLine();  //insert blank line to start
+        var question = GetRandomPrompt();
+        Console.WriteLine("\nList as many responses as you can to the following prompt:");
+        Console.WriteLine($"\n--- {question} ---");
+        CountDown(8);
+        Timer(seconds);
+    }
+    public void Timer(int seconds)
+    {
+        Stopwatch timer = new Stopwatch();
+        timer.Start();
+        while (timer.Elapsed.TotalSeconds < seconds)
+        {
+            Console.Write("> ");
+            _userList.Add(Console.ReadLine());
+        }
+        timer.Stop();
+        int listLength = _userList.Count;
+        Console.WriteLine($"\nYou listed {listLength} items!");
     }
 }
