@@ -1,6 +1,6 @@
 using System;
 
-public class EternalGoal : Goal
+public abstract class EternalGoal : Goal
 {
     private string _type = "Eternal Goal:";
     private bool _status;
@@ -20,17 +20,17 @@ public class EternalGoal : Goal
         Console.WriteLine($"{i}. [ ] {GetName()} ({GetDescription()})");
     }
 
-    public override string SaveGoal()
+    public override void SaveGoal()
     {
         return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}");
     }
 
-    public override string LoadGoal()
+    public override void LoadGoal()
     {
         return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}");
     }
 
-    public override void RecordGoalEvent()
+    public override void RecordGoalEvent(List<Goal> goals)
     {
         Console.WriteLine($"Nice work! You have earned {GetPoints()} points! Way to go dude!");
     }

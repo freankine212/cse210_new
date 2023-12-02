@@ -9,7 +9,7 @@ public abstract class Goal
     private int _points;
 
     //constructors
-    public Goal()
+    public Goal(string type, string name, string description, int points)
     {
         _type = type;
         _name = name;
