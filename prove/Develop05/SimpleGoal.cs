@@ -40,7 +40,7 @@ public abstract class SimpleGoal : Goal
     {
         return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}");
     }
-    public override void RecordGoalEvent(List<Goal> goals)
+    public abstract void RecordGoalEvent(List<Goal> _goals)
     {
        _status = true;
        Console.WriteLine($"Nice work! You have earned {GetPoints()} points! Way to go dude!");

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 public abstract class EternalGoal : Goal
 {
@@ -30,7 +31,7 @@ public abstract class EternalGoal : Goal
         return ($"{_type}; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}");
     }
 
-    public override void RecordGoalEvent(List<Goal> goals)
+    public abstract void RecordGoalEvent(List<Goal> _goals)
     {
         Console.WriteLine($"Nice work! You have earned {GetPoints()} points! Way to go dude!");
     }

@@ -75,7 +75,7 @@ public abstract class ChecklistGoal : Goal
         SetTimes();
         int points = GetPoints();
 
-        if (_count == _numberTimes)
+        if (_count == _numberOfTimes)
         {
             _status = true;
             points = points + _bonusPoints;

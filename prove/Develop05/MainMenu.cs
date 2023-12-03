@@ -27,5 +27,20 @@ public class MainMenu
 
             _userInput = Console.ReadLine();
             _userChoice = 0;
+
+            try
+            {
+                _userChoice = int.Parse(_userInput);
+            }
+            catch (FormatException)
+            {
+                _userChoice = 0;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(
+                    $"Unexpected error:  {exception.Message}");
+            }
+            return _userChoice;
         }
 }

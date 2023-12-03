@@ -54,7 +54,7 @@ public class GoalManagement
         }
     }
 
-    public void RecordGoalEvent()
+    public virtual void RecordGoalEvent()
     {
         ListGoals();
 
@@ -113,10 +113,10 @@ public class GoalManagement
 
             if (entries[0] == "Checklist Goal: ")
             {
-                int numberTimes = int.Parse(entries[5]);
+                int numberOfTimes = int.Parse(entries[5]);
                 int bonusPoints = int.Parse(entries[6]);
                 int counter = int.Parse(entries[7]);
-                ChecklistGoal checklistGoal = new ChecklistGoal(type, name, description, points, status, numberTimes, bonusPoints, counter);
+                ChecklistGoal checklistGoal = new ChecklistGoal(type, name, description, points, status, numberOfTimes, bonusPoints, counter);
                 AddGoal(checklistGoal);
             }
         }

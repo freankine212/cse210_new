@@ -25,6 +25,22 @@ public class GoalMenu
 
         _goalInput = Console.ReadLine();
         _goalChoice = 0;
+
+                // This block catches any non integer values that are entered
+        try
+        {
+            _goalChoice = int.Parse(_goalInput);
+        }
+        catch (FormatException)
+        {
+            _goalChoice = 0;
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine(
+                $"Unexpected error:  {exception.Message}");
+        }
+        return _goalChoice;
     }
 
 
