@@ -1,0 +1,4 @@
+description of Foundation1 Program
+~~~~~~~
+While working on the YouTube program I realized that comments could range anywhere from uplifting to just observational. It was my intent to show how the average person would comment, as I have seen from the THOUSANDS of comments. I applied the abstration principle by using the Video and Comment classes. I made the program focus on the core attributes and functions. Video gives the bare bones of the video, whereas comment takes the intricacies of the consumers of the video and gives life and different perspectives of the video into light.
+
