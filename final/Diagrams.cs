@@ -9,8 +9,8 @@ Project 1
 | - videoLength: int        |
 | - comments: List<Comment> |
 +--------------------------------------+
-| + GetNumberOfComments(): int         |
-| + AddComment(comment: Comment): void |
+| + CountComments(): int         |
+| + ListComment(comment: Comment): void |
 | + DisplayInfo(): void                |
 +--------------------------------------+
                 |
@@ -43,7 +43,7 @@ Project 2
 |           Product           |
 +-----------------------------+
 | - name: string              |
-| - productId: int            |
+| - productID: int            |
 | - price: decimal            |
 | - quantity: int             |
 +-----------------------------+
@@ -94,7 +94,7 @@ Project 3
 |       Lecture         |
 +-----------------------+
 | - speaker: string     |
-| - capacity: int       |
+| - capacity: string    |
 +----------------------------+
 | + GetFullDetails(): string |
 +----------------------------+
@@ -104,7 +104,7 @@ Project 3
 +----------------------------+
 |       Reception            |
 +----------------------------+
-| - rsvpEmail: string        |
+| - GetEmail: string        |
 +----------------------------+
 | + GetFullDetails(): string |
 +----------------------------+
@@ -126,9 +126,9 @@ Project 3
 | - city: string        |
 | - state: string       |
 | - country: string     |
-+----------------------------+
-| + GetFullAddress(): string |
-+----------------------------+
++---------------------------------+
+|  GenerateFullAddress(): string  |
++---------------------------------+
 
 
 Project 4
